@@ -1,23 +1,28 @@
 package api;
 
+import utils.ApiUtils;
+
 import static io.restassured.RestAssured.given;
 
-public class Request extends ApiUtils implements Verbos{
+public class Request extends ApiUtils implements Verbos {
 
     @Override
     public void POST() {
         response = given()
+                .log().all()
                 .relaxedHTTPSValidation()
                 .params(params)
                 .headers(headers)
                 .body(body.toString())
                 .post(uri);
+
         super.log("POST");
     }
 
     @Override
     public void GET() {
         response = given()
+                .log().all()
                 .relaxedHTTPSValidation()
                 .params(params)
                 .headers(headers)
@@ -28,6 +33,7 @@ public class Request extends ApiUtils implements Verbos{
     @Override
     public void PUT() {
         response = given()
+                .log().all()
                 .relaxedHTTPSValidation()
                 .params(params)
                 .headers(headers)
@@ -39,6 +45,7 @@ public class Request extends ApiUtils implements Verbos{
     @Override
     public void PATCH() {
         response = given()
+                .log().all()
                 .relaxedHTTPSValidation()
                 .params(params)
                 .headers(headers)
@@ -50,6 +57,7 @@ public class Request extends ApiUtils implements Verbos{
     @Override
     public void DELETE() {
         response = given()
+                .log().all()
                 .relaxedHTTPSValidation()
                 .params(params)
                 .headers(headers)
