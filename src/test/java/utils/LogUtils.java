@@ -1,10 +1,12 @@
 package utils;
 
+import static utils.ScenarioUtils.addText;
+
 public class LogUtils {
 
     public void logInfo(String value) {
         if (!value.contains("{}")){
-            ScenarioUtils.addText(value);
+            ScenarioUtils.addText((value));
         }
     }
 

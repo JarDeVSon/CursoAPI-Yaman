@@ -1,4 +1,4 @@
-package api;
+package utils;
 
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -10,19 +10,19 @@ import java.util.concurrent.TimeUnit;
 
 public class ApiUtils extends LogUtils {
 
-    protected static Response response;
-    protected static JSONObject body;
-    protected static String uri;
-    protected static Map<String, String> headers = new HashMap<>();
-    protected static Map<String, String> params = new HashMap<>();
-    protected static String token;
+    protected  Response response;
+    protected  JSONObject body;
+    protected  String uri;
+    protected  Map<String, String> headers = new HashMap<>();
+    protected  Map<String, String> params = new HashMap<>();
+    protected  String token;
 
 
     public void log(String verbo){
         super.logInfo("******** Dados enviados na Request ********");
         super.logInfo(verbo + " " + uri);
         super.logInfo("Body: \n" + body);
-        super.logInfo("Headers: " + headers);
+        super.logInfo("Headers: \n" + headers);
         super.logInfo("Params: " + params);
 
         super.logInfo("******** Dados recebidos como Response ********");

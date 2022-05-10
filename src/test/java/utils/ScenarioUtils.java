@@ -25,7 +25,7 @@ public class ScenarioUtils {
     public static Long getId(){
         return  Thread.currentThread().getId();
     }
-    public static void addText(String text){
-        get().log(text);
+    public static void addText(String texto){
+        get().log(texto);
     }
 }
