@@ -1,5 +1,6 @@
 package utils;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,7 +46,7 @@ public class JsonUtils {
         return obj;
     }
 
-    public JSONObject setJsonValuesByKey(JSONObject json, Map<String, String> values) {
+    public JSONObject setJsonValues(JSONObject json, Map<String, String> values) {
         JSONObject newJson = null;
         for (Map.Entry<String, String> entry : values.entrySet()) {
             String key = entry.getKey();

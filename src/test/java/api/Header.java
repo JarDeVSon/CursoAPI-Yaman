@@ -7,7 +7,7 @@ public class Header {
     Map<String, String> header = new HashMap<>();
 
     public Map<String, String> gorestHeader(String token) {
-        header.put("Authorization", token);
+        header.put("Authorization", "Bearer " + token);
         header.put("Content-Type", "application/json");
         return header;
     }

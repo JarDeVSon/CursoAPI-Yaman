@@ -19,7 +19,7 @@ public class ReportUtils {
         ReportBuilder reportBuilder = new ReportBuilder();
         reportBuilder.setReportDirectory("target/report/");
         reportBuilder.setReportFileName(dateFormatFile.format(date));
-        reportBuilder.setReportTitle("Projeto API Automacao");
+        reportBuilder.setReportTitle("Squad - Canais - Operações - Automacao APIs");
         reportBuilder.setReportColor(Color.CYAN);
         reportBuilder.enableVoiceControl();
         reportBuilder.setAdditionalInfo("Environment", "My Environment");
