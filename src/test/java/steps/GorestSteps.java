@@ -12,9 +12,6 @@ import org.json.JSONObject;
 import utils.JsonUtils;
 import utils.PropertiesUtils;
 
-import java.io.IOException;
-
-
 import static api.ApiBody.initBodyUsers;
 import static org.junit.Assert.assertEquals;
 
@@ -38,19 +35,10 @@ public class GorestSteps extends Request {
 
 
     @Quando("envio uma request de cadastro de usuario com dados validos")
-    public void envioUmaRequestDeCadastroDeUsuarioComDadosValidos() throws IOException {
+    public void envioUmaRequestDeCadastroDeUsuarioComDadosValidos() {
         super.uri = prop.getProp("uri");
         super.headers = apiHeaders.gorestHeader(token);
-//        super.body = jsonUtils.parseJSONFile("teste");
 
-//        Users userEnvio = Users.builder()
-//                .email(faker.internet().emailAddress())
-//                .name(faker.name().fullName())
-//                .gender("female")
-//                .status("active")
-//                .build();
-//
-//
         super.body = new JSONObject(new Gson().toJson(initBodyUsers()));
         super.POST();
     }
@@ -63,7 +51,7 @@ public class GorestSteps extends Request {
 
     }
     @Dado("tenho um usuario cadastrado na api")
-    public void tenhoUmUsuarioCadastradoNaApi() throws IOException {
+    public void tenhoUmUsuarioCadastradoNaApi() {
        envioUmaRequestDeCadastroDeUsuarioComDadosValidos();
     }
 
